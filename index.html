@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>js-29 sign up form</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+
     <script type="text/javascript">
 
 
@@ -17,24 +18,40 @@
             var input3 = document.getElementById("input3");
 
             if (input1.value == "" || input1.length == 0) {
-                input1.style.borderColor = "red";
+                input1.style.border = "2px solid red";
                 document.getElementById("inp1").innerHTML = "forgot name?";
-                return false;
 
-            } else if (input2.value == "" || input2.length == 0) {
-                input2.style.borderColor = "red";
-                document.getElementById("inp2").innerHTML = "Forgot email?";
-                return false;
-
-            } else if (input3.value == "" || input3.length == 0) {
-                document.getElementById("inp3").innerHTML = "forgot password?";
-                input3.style.borderColor = "red";
-                return false;
             } else {
-                document.getElementById("inp").innerHTML = "regitration was successful";
-                return false;
+                input1.style.border = " 2px solid green";
+                document.getElementById("inp1").innerHTML = "";
+
             }
+
+            if (input2.value == "" || input2.length == 0) {
+                input2.style.border = "2px solid red";
+                document.getElementById("inp2").innerHTML = "Forgot email?";
+            } else {
+                input2.style.border = " 2px solid green";
+                document.getElementById("inp2").innerHTML = "";
+
+            }
+
+            if (input3.value == "" || input3.length == 0) {
+                input3.style.border = "2px solid red";
+                document.getElementById("inp3").innerHTML = "forgot password?";
+
+
+            } else {
+                input3.style.border = "2px solid green";
+                document.getElementById("inp3").innerHTML = "";
+
+            }
+
+            return false;
+
+
         }
+
 
     </script>
 
@@ -51,20 +68,19 @@
                     without any ads for free!</p>
             </div>
 
-            <form onsubmit="return validacia()"
+            <form id="my form" onsubmit="return validacia()"
                 style="display: flex; flex-direction: column; align-items: center; gap: 14px;">
 
                 <input type="name" id="input1" placeholder="Name"
                     style="padding-left: 15px; background: FFFFFF; border: 1px solid #0000001A; border-radius: 8px; width: 375px; height: 55px; outline: none;">
-                <span id="inp1"></span>
+                <span id="inp1" style="color: red;"></span>
                 <input type="text" id="input2" placeholder="Email Address"
                     style="padding-left: 15px; background: FFFFFF;border: 1px solid #0000001A; border-radius: 8px; width: 375px; height: 55px; outline: none;">
-                <span id="inp2"></span>
+                <span id="inp2" style="color: red;"></span>
                 <input type="password" id="input3" placeholder="Password"
                     style="padding-left: 15px; background: FFFFFF; border-radius: 8px; width: 375px; border: 1px solid #0000001A; height: 55px; outline: none;">
-                <span id="inp3"></span>
-                <button type="button" class="btn" id="account" onclick="validacia()">Create Account</button>
-                <span id="inp"></span>
+                <span id="inp3" style="color: red;"></span>
+                <input type="submit" value="Create Account" class="btn" id="account">
 
             </form>
             <div class="text-div">
